@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TradeData>
+	<Trade id="1">		
+			<Trader name="piyush">piyush1@gmail.com</Trader>
+			<SartTime>2001-10-10 21:34:46 -0400</SartTime>
+			<EndTime>2001-10-10 21:34:46 -0400</EndTime>
+			<TradeValue>1000</TradeValue>
+		
+	</Trade>
+ 
+	<Trade id="2">		
+			<Trader name="piyush2">piyush2@gmail.com</Trader>
+			<SartTime>2001-10-10 21:34:46 -0400</SartTime>
+			<EndTime>2001-10-10 21:34:46 -0400</EndTime>
+			<TradeValue>1000</TradeValue>
+		
+	</Trade>
+	<Trade id="3">		
+			<Trader name="piyush3">piyush3@gmail.com</Trader>
+			<SartTime>2001-10-10 21:34:46 -0400</SartTime>
+			<EndTime>2001-10-10 21:34:46 -0400</EndTime>
+			<TradeValue>1000</TradeValue>
+		
+	</Trade>
+	<Trade id="4">		
+			<Trader name="piyush4">piyush4@gmail.com</Trader>
+			<SartTime>2001-10-10 21:34:46 -0400</SartTime>
+			<EndTime>2001-10-10 21:34:46 -0400</EndTime>
+			<TradeValue>1000</TradeValue>
+		
+	</Trade>
+	<Trade id="5">		
+			<Trader name="piyush5">piyush5@gmail.com</Trader>
+			<SartTime>2001-10-10 21:34:46 -0400</SartTime>
+			<EndTime>2001-10-10 21:34:46 -0400</EndTime>
+			<TradeValue>1000</TradeValue>
+		
+	</Trade>
+</TradeData>
