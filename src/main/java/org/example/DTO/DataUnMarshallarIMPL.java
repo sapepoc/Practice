@@ -1,11 +1,12 @@
 package org.example.DTO;
 
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Iterator;
+import java.util.List;
+
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
@@ -15,26 +16,34 @@ import javax.xml.stream.events.Characters;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
 
-import org.example.Entities.Trades;
+import org.example.entities.Trades;
+import org.example.exception.ReadException;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DataUnMarshallarIMPL implements DataUnMarshallar {
 
-	Trades trade;
+	private boolean condition=true;
+	
+	/*Trades trade = new Trades();
+
+
 	boolean bstartTime = false;
 	boolean bendTime = false;
 	boolean btradeValue = false;
 
-	public void read() throws FileNotFoundException, XMLStreamException {
+	private void read() throws FileNotFoundException, XMLStreamException,ReadException{
 
 		ClassLoader classLoader = getClass().getClassLoader();
-		File file = new File(classLoader.getResource("files/Input.xml").getFile());
+		File file = new File(classLoader.getResource("files/nput.xml").getFile());
 		XMLInputFactory inputFactory = XMLInputFactory.newInstance();
 
-		InputStream in = new FileInputStream(file);		
+		InputStream in = new FileInputStream(file);
 		XMLEventReader eventReader = inputFactory.createXMLEventReader(in);
+		
 
 		while (eventReader.hasNext()) {
-			
+
 			XMLEvent event = eventReader.nextEvent();
 			switch (event.getEventType()) {
 			case XMLStreamConstants.START_ELEMENT:
@@ -45,6 +54,7 @@ public class DataUnMarshallarIMPL implements DataUnMarshallar {
 					while (attributes.hasNext()) {
 						Attribute attribute = attributes.next();
 						if (attribute.getName().toString().equals("id")) {
+							trade.setId(attribute.getValue());
 							System.out.println("Trader id = " + attribute.getValue());
 						}
 						break;
@@ -74,6 +84,21 @@ public class DataUnMarshallarIMPL implements DataUnMarshallar {
 			}
 
 		}
+		throw new ReadException();
 
+	}*/
+
+	
+	@Override
+	public List<Trades> unmarshal(String data) throws ReadException {
+
+		if(condition)
+		{
+		throw new ReadException();
+		}
+		
+		return null;
+
+		
 	}
 }

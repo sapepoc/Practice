@@ -1,29 +1,35 @@
 package org.example;
 
-import java.io.FileNotFoundException;
-
-import javax.xml.stream.XMLStreamException;
-
-import org.example.DTO.DataUnMarshallar;
 import org.example.DTO.DataUnMarshallarIMPL;
+import org.example.controller.RuleServiceController;
+//import org.example.configuration.AppConfig;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
+@ComponentScan
 @SpringBootApplication
-public class RuleServiceStarter {
+public class RuleServiceStarter implements CommandLineRunner {
+
+	@Autowired
+	RuleServiceController ruleServiceController;
 
 	public static void main(String[] args) {
+
+		// ApplicationContext context = new
+		// AnnotationConfigApplicationContext(AppConfig.class);
+
 		SpringApplication.run(RuleServiceStarter.class, args);
-		System.out.println("Hi");
-		DataUnMarshallar unmarshallar  = new DataUnMarshallarIMPL();
-		try {
-			unmarshallar.read();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (XMLStreamException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
 	}
+
+	@Override
+	public void run(String... args) throws Exception {
+
+		ruleServiceController.start();
+
+	}
+
 }

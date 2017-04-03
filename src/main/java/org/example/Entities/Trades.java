@@ -1,9 +1,18 @@
-package org.example.Entities;
+package org.example.entities;
 
 public class Trades {
 	
-	String emailID;
-	int value;
+	private String emailID;
+	private String id;
+	private int value;
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	
 	
 	
 	public String getEmailID() {
