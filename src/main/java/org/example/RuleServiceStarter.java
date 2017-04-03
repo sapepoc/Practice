@@ -27,7 +27,7 @@ public class RuleServiceStarter implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-
+System.out.println("Service started");
 		ruleServiceController.start();
 
 	}

@@ -23,7 +23,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class DataUnMarshallarIMPL implements DataUnMarshallar {
 
-	private boolean condition=true;
+	private boolean condition=false;
 	
 	/*Trades trade = new Trades();
 
