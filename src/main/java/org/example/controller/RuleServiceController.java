@@ -1,13 +1,17 @@
 package org.example.controller;
 
+import java.io.FileNotFoundException;
 import java.util.Collections;
 import java.util.List;
+
+import javax.xml.transform.TransformerConfigurationException;
 
 import org.example.DTO.DataUnMarshallar;
 import org.example.entities.RuleEngine;
 import org.example.entities.RuleGroups;
 import org.example.entities.Trades;
 import org.example.enums.EngineType;
+import org.example.exception.ReadException;
 import org.example.services.ProxyService;
 import org.example.services.RuleEngineBuilder;
 import org.example.services.RuleGroupLoader;
@@ -35,7 +39,12 @@ public class RuleServiceController {
 
 		RuleGroups ruleGroups = ruleGroupLoader.getRuleGroups();
 		String data = proxyService.getData();
-	    List<Trades> tradeList = dataUnMarshallar.unmarshal(data);
+	    try {
+			List<Trades> tradeList = dataUnMarshallar.unmarshal(data);
+		} catch (ReadException | FileNotFoundException | TransformerConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		RuleEngine ruleEngine = ruleEngineBuilder.buildRuleEngine(engineType);
 	  //  Collections.synchronizedMap(m)
 

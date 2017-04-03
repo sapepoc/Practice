@@ -15,6 +15,10 @@ import javax.xml.stream.events.Attribute;
 import javax.xml.stream.events.Characters;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamSource;
 
 import org.example.entities.Trades;
 import org.example.exception.ReadException;
@@ -23,8 +27,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class DataUnMarshallarIMPL implements DataUnMarshallar {
 
-	private boolean condition=false;
-	
+	//private boolean condition=false;
+	/*
+	  private Marshaller marshaller;
+	    private Unmarshaller unmarshaller;
+*/
+	 
+	// InputStream xsltFile=JAXBConvertor.class.getResourceAsStream("transform-0-1.xslt");
 	/*Trades trade = new Trades();
 
 
@@ -40,7 +49,7 @@ public class DataUnMarshallarIMPL implements DataUnMarshallar {
 
 		InputStream in = new FileInputStream(file);
 		XMLEventReader eventReader = inputFactory.createXMLEventReader(in);
-		
+		`
 
 		while (eventReader.hasNext()) {
 
@@ -90,12 +99,19 @@ public class DataUnMarshallarIMPL implements DataUnMarshallar {
 
 	
 	@Override
-	public List<Trades> unmarshal(String data) throws ReadException {
+	public List<Trades> unmarshal(String data) throws ReadException, FileNotFoundException, TransformerConfigurationException {
 
 		/*if(condition)
 		{
 		throw new ReadException();
 		}*/
+		
+
+		TransformerFactory tf = TransformerFactory.newInstance();
+		StreamSource xsl = new StreamSource("files/Input.xsl");
+		StreamSource xml = new StreamSource("files/Input.xml");
+		Transformer transformer = tf.newTransformer(xsl);
+	//	transformer.transform(xml, outputTarget);
 		
 		return null;
 
