@@ -92,10 +92,10 @@ public class DataUnMarshallarIMPL implements DataUnMarshallar {
 	@Override
 	public List<Trades> unmarshal(String data) throws ReadException {
 
-		if(condition)
+		/*if(condition)
 		{
 		throw new ReadException();
-		}
+		}*/
 		
 		return null;
 
