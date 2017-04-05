@@ -7,6 +7,8 @@ import javax.xml.transform.TransformerConfigurationException;
 
 import org.example.entities.Trades;
 import org.example.exception.ReadException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.oxm.Marshaller;
 import org.springframework.oxm.Unmarshaller;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
@@ -14,12 +16,16 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class DataUnMarshallarIMPL implements DataUnMarshallar {
-
+	  private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	@Override
-	public List<Trades> unmarshal(String data)
-			throws ReadException {
+	public List<Trades> unmarshal(String data)	 {
 		// TODO Auto-generated method stub
-		throw new ReadException();
+		logger.debug("Hi i am debug message");
+		logger.info("Hi i am info message");
+		logger.warn("Hi i am warn message");
+		logger.error("Hi i am error message");
+	throw new ReadException();
+		//return null;
 	}
 	/*
 	private Marshaller marshaller;
