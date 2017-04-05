@@ -27,8 +27,10 @@ public class RuleServiceController {
 	RuleGroupLoader ruleGroupLoader;
 	@Autowired
 	ProxyService proxyService;
-/*	@Autowired
-	DataUnMarshallar dataUnMarshallar;*/
+
+	@Autowired
+	DataUnMarshallar dataUnMarshallar;
+
 	@Autowired
 	RuleEngineBuilder ruleEngineBuilder;
 	@Autowired
@@ -37,15 +39,13 @@ public class RuleServiceController {
 	EngineType engineType;
 
 	public void start() {
-		
+
 		System.out.println(FXErrorCodes.Series.EVENTS.toString());
-		
-		
+
 		RuleGroups ruleGroups = ruleGroupLoader.getRuleGroups();
 		String data = proxyService.getData();
+		dataUnMarshallar.unmarshal(data);
 		
-
 	}
-
 
 }

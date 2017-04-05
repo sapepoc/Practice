@@ -17,9 +17,9 @@ public class ExceptionAspect {
 	}
 
 	@AfterThrowing(pointcut = "execution(* org.example.DTO..*(..))", throwing = "Read")
-	public void afterThrowingReadExc() {
+	public void afterThrowingReadExc(JoinPoint joinPoint, Exception Read) {
 		System.out.println("*************Caught Reader Exception Exception *****************");
-	//	System.out.println(joinPoint.getSignature().toLongString() + " exception here!");
+		System.out.println(joinPoint.getSignature().toLongString() + " exception here!");
 	}
 
 	/*
