@@ -1,6 +1,7 @@
 package org.example.aspect.exception;
 
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
@@ -18,6 +19,7 @@ public class ExceptionAspect {
 	@AfterThrowing(pointcut = "execution(* org.example.DTO..*(..))", throwing = "Read")
 	public void afterThrowingReadExc() {
 		System.out.println("*************Caught Reader Exception Exception *****************");
+	//	System.out.println(joinPoint.getSignature().toLongString() + " exception here!");
 	}
 
 	/*
@@ -37,4 +39,6 @@ public class ExceptionAspect {
 		System.out.println("*************Caught super Exception Exception *****************");
 	}
 
+	
+	
 }

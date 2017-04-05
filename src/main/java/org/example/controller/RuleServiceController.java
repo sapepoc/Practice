@@ -11,6 +11,7 @@ import org.example.entities.RuleEngine;
 import org.example.entities.RuleGroups;
 import org.example.entities.Trades;
 import org.example.enums.EngineType;
+import org.example.enums.FXErrorCodes;
 import org.example.exception.ReadException;
 import org.example.services.ProxyService;
 import org.example.services.RuleEngineBuilder;
@@ -26,8 +27,8 @@ public class RuleServiceController {
 	RuleGroupLoader ruleGroupLoader;
 	@Autowired
 	ProxyService proxyService;
-	@Autowired
-	DataUnMarshallar dataUnMarshallar;
+/*	@Autowired
+	DataUnMarshallar dataUnMarshallar;*/
 	@Autowired
 	RuleEngineBuilder ruleEngineBuilder;
 	@Autowired
@@ -36,17 +37,13 @@ public class RuleServiceController {
 	EngineType engineType;
 
 	public void start() {
-
+		
+		System.out.println(FXErrorCodes.Series.EVENTS.toString());
+		
+		
 		RuleGroups ruleGroups = ruleGroupLoader.getRuleGroups();
 		String data = proxyService.getData();
-	    try {
-			List<Trades> tradeList = dataUnMarshallar.unmarshal(data);
-		} catch (ReadException | FileNotFoundException | TransformerConfigurationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		RuleEngine ruleEngine = ruleEngineBuilder.buildRuleEngine(engineType);
-	  //  Collections.synchronizedMap(m)
+		
 
 	}
 

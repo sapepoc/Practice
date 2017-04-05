@@ -15,6 +15,6 @@ public interface DataUnMarshallar {
 	
 	
 
-	public List<Trades> unmarshal(String data)throws ReadException, FileNotFoundException, TransformerConfigurationException;;
+	public List<Trades> unmarshal(String data)throws ReadException, FileNotFoundException, TransformerConfigurationException, Exception;;
 
 }

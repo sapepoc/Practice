@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type = "text/xsl" href = "	Input.xsl"?>
+<?xml-stylesheet type = "text/xsl" href = "Input.xsl"?>
 <TradeData>
 	<Trade id="1">
 		<Trader name="piyush">piyush1@gmail.com</Trader>
@@ -37,26 +37,4 @@
 		<TradeValue>1000</TradeValue>
 
 	</Trade>
-<!-- 
-	<class>
-		<student rollno="393">
-			<firstname>Dinkar</firstname>
-			<lastname>Kad</lastname>
-			<nickname>Dinkar</nickname>
-			<marks>85</marks>
-		</student>
-		<student rollno="493">
-			<firstname>Vaneet</firstname>
-			<lastname>Gupta</lastname>
-			<nickname>Vinni</nickname>
-			<marks>95</marks>
-		</student>
-		<student rollno="593">
-			<firstname>Jasvir</firstname>
-			<lastname>Singh</lastname>
-			<nickname>Jazz</nickname>
-			<marks>90</marks>
-		</student>
-	</class>
- -->
 </TradeData>

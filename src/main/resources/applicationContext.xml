@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+ 
+    <bean id="springApp" class="org.example.DTO.DataUnMarshallarIMPL" >
+        <property name="marshaller" ref ="jaxb2Marshaller" />
+          <property name="unMarshaller" ref ="jaxb2Marshaller" />
+    </bean>  
+    
+ 
+    <bean id="jaxb2Marshaller"
+          class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+        <property name="classesToBeBound">
+            <list>
+                <value>org.example.entities.Trade</value>
+            </list>
+        </property>
+    </bean>
+    
+    
+    
+</beans> 

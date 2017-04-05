@@ -6,22 +6,21 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 
-@ControllerAdvice
+/*@ControllerAdvice*/
 public class RestExceptionHandler {
-	
-//	 private static final Logger logger = LoggerFactory.getLogger(MyControllerAdviceDemo.class);
 	
 
 	@ExceptionHandler(Exception.class)
 	public void exception(Exception e) {
-
-		// logger.info("handleIOException - Catching: " + ex.getClass().getSimpleName());
+		
+		System.out.println("handled in REST");
 	}
 	
 	@ExceptionHandler(ReadException.class)
 	public String rederExceptionHandle(ReadException e) {
 
-		return "error";
+		System.out.println("handled in REST");
+		return e.toString();
 	}
 
 }

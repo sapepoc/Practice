@@ -1,21 +1,20 @@
 package org.example.enums;
+public enum FXErrorCodes {
 
-public enum FXStatusCodeEnum {
-
-	MARSHALLING_SUCESS(2000, "Marshelling Sucess"),
-	MARSHALLIG_ERROR(2004, "Marshallling  Error"), 
+	RULE_NOT_FOUND(2000, "Rule not found"),
+	RULE_NOT_APPLIED(2001, "Rule not applied"),
+	RULE_ENGINE_BUILDER_ERROR(2004, "Rule builder issue"), 
 	ALERT_NOT_FOUND(3004, "Not Found"), 
-	ALERT_SENT(3000, "Alert Sent Sucessfully");
+	ALERT_NOT_SENT(3000, "Alert Sent Sucessfully");
 
 	private final int value;
 
 	private final String infoMessge;
 
-	FXStatusCodeEnum(int value, String infoMessge) {
+	FXErrorCodes(int value, String infoMessge) {
 		this.value = value;
 		this.infoMessge = infoMessge;
 	}
-
 	@Override
 	public String toString() {
 		return Integer.toString(this.value);
@@ -30,19 +29,20 @@ public enum FXStatusCodeEnum {
 		Series(int value) {
 			this.value = value;
 		}
-
 		public int value() {
 			return this.value;
 		}
-
 		public static Series valueOf(int status) {
-			int seriesCode = status / 100;
+			int seriesCode = status / 1000;
 			for (Series series : values()) {
 				if (series.value == seriesCode) {
 					return series;
-				}
-			}
+				}			}
 			throw new IllegalArgumentException("No matching constant for [" + status + "]");
+		}
+		@Override
+		public String toString() {
+			return Integer.toString(this.value);
 		}
 
 	}

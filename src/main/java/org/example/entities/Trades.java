@@ -1,33 +1,42 @@
 package org.example.entities;
 
+import java.time.LocalDate;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Trades {
 	
-	private String emailID;
-	private String id;
-	private int value;
-	
-	public String getId() {
-		return id;
+
+	private String user;
+	private String security;
+	private int amount;
+	private LocalDate date;
+
+	public String getUser() {
+		return user;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setUser(String user) {
+		this.user = user;
 	}
-	
-	
-	
-	public String getEmailID() {
-		return emailID;
+	public String getSecurity() {
+		return security;
 	}
-	public void setEmailID(String emailID) {
-		this.emailID = emailID;
+	public void setSecurity(String security) {
+		this.security = security;
 	}
-	public int getValue() {
-		return value;
+	public int getAmount() {
+		return amount;
 	}
-	public void setValue(int value) {
-		this.value = value;
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+	public LocalDate getDate() {
+		return date;
+	}
+	public void setDate(LocalDate date) {
+		this.date = date;
 	}
 
-	
 
 }
