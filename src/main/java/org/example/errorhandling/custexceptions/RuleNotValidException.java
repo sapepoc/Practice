@@ -1,6 +1,5 @@
 package org.example.errorhandling.custexceptions;
 
-import org.example.errorhandling.FXErrorCodes;
 
 public class RuleNotValidException extends RulesException {
 

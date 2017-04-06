@@ -1,10 +1,8 @@
 package org.example.DTO;
 
-import java.io.FileNotFoundException;
 import java.util.List;
 
-import javax.xml.stream.XMLStreamException;
-import javax.xml.transform.TransformerConfigurationException;
+
 
 import org.example.entities.Trades;
 
