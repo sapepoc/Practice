@@ -13,14 +13,9 @@ public class test {
 	public void test() {
 	
 		XMLTransformer xMLTransformer = new XMLTransformer();
-		try {
-			xMLTransformer.writeDocumentToFile(null, null);
 		
-			
-		} catch (TransformerException | JAXBException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
+		
 	}
 
 }

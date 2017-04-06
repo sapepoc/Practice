@@ -11,8 +11,8 @@ import org.example.entities.RuleEngine;
 import org.example.entities.RuleGroups;
 import org.example.entities.Trades;
 import org.example.enums.EngineType;
-import org.example.enums.FXErrorCodes;
-import org.example.exception.ReadException;
+import org.example.errorhandling.FXErrorCodes;
+
 import org.example.services.ProxyService;
 import org.example.services.RuleEngineBuilder;
 import org.example.services.RuleGroupLoader;
@@ -40,11 +40,14 @@ public class RuleServiceController {
 
 	public void start() {
 
-		System.out.println(FXErrorCodes.Series.EVENTS.toString());
+		System.out.println(FXErrorCodes.Series.EVENTS.toString()+" "+FXErrorCodes.ALERT_NOT_FOUND.getInfoMessage());
 
 		RuleGroups ruleGroups = ruleGroupLoader.getRuleGroups();
 		String data = proxyService.getData();
 		dataUnMarshallar.unmarshal(data);
+		FXErrorCodes.ALERT_NOT_FOUND.getInfoMessage();
+		
+		
 		
 	}
 

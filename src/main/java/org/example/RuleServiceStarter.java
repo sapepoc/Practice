@@ -2,7 +2,7 @@ package org.example;
 
 import org.example.DTO.DataUnMarshallarIMPL;
 import org.example.controller.RuleServiceController;
-import org.example.enums.FXErrorCodes;
+import org.example.errorhandling.FXErrorCodes;
 //import org.example.configuration.AppConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

@@ -13,6 +13,7 @@ public class Item {
 		firstText = str;
 	}
 
+
 	public String getFirstText() {
 		if (firstText == null) {
 			return null;
