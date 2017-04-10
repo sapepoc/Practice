@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class Trades {
+public class Trade {
 	
 
 	private String user;

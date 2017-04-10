@@ -8,11 +8,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ImportResource;
 
 @ComponentScan
 @SpringBootApplication
 @EnableAutoConfiguration
-//@ImportResource({ "classpath:applicationContext.xml" })
+@ImportResource({ "classpath:applicationContext.xml" })
 public class RuleServiceStarter implements CommandLineRunner {
 
 	@Autowired
@@ -31,6 +32,6 @@ public class RuleServiceStarter implements CommandLineRunner {
 		ruleServiceController.start();
 	
 
-	}
+	}	
 
 }

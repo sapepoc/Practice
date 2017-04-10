@@ -28,8 +28,7 @@ public enum FXErrorCodes {
 		private final int value;
 
 		Series(int value) {
-			this.value = value;
-		}
+			this.value = value;	}
 		public int value() {
 			return this.value;
 		}

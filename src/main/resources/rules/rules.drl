@@ -1,0 +1,14 @@
+package rules
+ 
+import org.example.entities.Trade;
+
+rule "Wash Trade"
+
+	when
+        trade:Trade (getUser() == 'piyush'|| getUser()=='test')
+       
+     
+    then
+        
+        trade.setSecurity('First Name is ' + trade.getUser());
+end

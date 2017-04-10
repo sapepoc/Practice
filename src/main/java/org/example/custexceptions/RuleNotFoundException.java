@@ -1,4 +1,4 @@
-package org.example.errorhandling.custexceptions;
+package org.example.custexceptions;
 
 public class RuleNotFoundException extends RulesException {
 

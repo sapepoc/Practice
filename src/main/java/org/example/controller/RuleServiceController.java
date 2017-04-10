@@ -1,19 +1,12 @@
 package org.example.controller;
 
-import java.io.FileNotFoundException;
-import java.util.Collections;
-import java.util.List;
-
-import javax.xml.transform.TransformerConfigurationException;
-
 import org.example.DTO.DataUnMarshallar;
-import org.example.entities.RuleEngine;
 import org.example.entities.RuleGroups;
-import org.example.entities.Trades;
 import org.example.enums.EngineType;
 import org.example.errorhandling.FXErrorCodes;
 
 import org.example.services.ProxyService;
+import org.example.services.RuleEngine;
 import org.example.services.RuleEngineBuilder;
 import org.example.services.RuleGroupLoader;
 import org.springframework.beans.factory.annotation.Autowired;

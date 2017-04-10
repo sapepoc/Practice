@@ -2,7 +2,7 @@ package org.example.DTO;
 
 import java.io.File;
 import java.util.List;
-import org.example.entities.Trades;
+import org.example.entities.Trade;
 import org.example.transformer.DataTransformer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +21,7 @@ public class DataUnMarshallarIMPL implements DataUnMarshallar {
 	  DataTransformer xMLTransformer;
 	  
 	@Override
-	public List<Trades> unmarshal(String data)  {
+	public List<Trade> unmarshal(String data)  {
 		// TODO Auto-generated method stub
 		
 		Document document = null;
