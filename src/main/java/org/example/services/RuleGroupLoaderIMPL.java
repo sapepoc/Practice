@@ -1,29 +1,26 @@
 package org.example.services;
 
 
-import org.example.custexceptions.RuleNotFoundException;
-import org.example.entities.RuleGroups;
-import org.example.errorhandling.FXErrorCodes;
-import org.example.errorhandling.Loggable;
-import org.springframework.stereotype.Service;
+import java.io.File;
 
-@Service
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Unmarshaller;
+import org.example.entities.RuleGroups;
+import org.example.entities.Trade;
+import org.example.entities.Trades;
+import org.example.errorhandling.Loggable;
+import org.springframework.stereotype.Component;
+
+
+@Component
 public class RuleGroupLoaderIMPL implements RuleGroupLoader {
 	
     private boolean rules=true;	
 	
 	@Loggable
 	@Override
-	public RuleGroups getRuleGroups() {
-		
-		System.out.println("Loading Rules Loaded");	
-		
-	/*	if(rules)
-		{
-		throw new RuleNotFoundException("FXError code is "+FXErrorCodes.RULE_NOT_FOUND+
-				" error description " +FXErrorCodes.RULE_NOT_FOUND.getInfoMessage());
-		}
-		else*/			
+	public RuleGroups getRuleGroups() throws Exception{
+
 		return null;
 	
 		

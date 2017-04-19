@@ -6,6 +6,6 @@ import org.example.entities.RuleGroups;
 
 public interface RuleGroupLoader {
 
-	public RuleGroups getRuleGroups();
+	public RuleGroups getRuleGroups() throws Exception;
 
 }

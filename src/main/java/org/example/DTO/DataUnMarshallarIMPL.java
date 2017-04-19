@@ -1,36 +1,42 @@
 package org.example.DTO;
 
 import java.io.File;
-import java.util.List;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 import org.example.entities.Trade;
-import org.example.transformer.DataTransformer;
+import org.example.entities.Trades;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
-import org.w3c.dom.Document;
 
 @Component
 public class DataUnMarshallarIMPL implements DataUnMarshallar {
-	
-	  private final Logger logger = LoggerFactory.getLogger(this.getClass());
-	  
-	  @Autowired
-	  @Qualifier("XMLTransformer")
-	  DataTransformer xMLTransformer;
-	  
-	@Override
-	public List<Trade> unmarshal(String data)  {
-		// TODO Auto-generated method stub
-		
-		Document document = null;
-		File file=null;
-		xMLTransformer.writeDocumentToFile(document, file);
-		return null;
 
-		
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+	ApplicationContext context;
+	Marshaller marshaller;
+
+	@Override
+	public Trades unmarshal(File file, Class className) throws Exception {
+
+		JAXBContext jaxbContext = JAXBContext.newInstance(className);
+		Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+		Trades trades = (Trades) unmarshaller.unmarshal(file);
+
+		for (Trade trade : trades.getTradeList()) {
+
+			System.out.println(trade.getUnderLying());
+			System.out.println(trade.getPrice());
+			System.out.println(trade.getVolume());
+			System.out.println(trade.getDateTime());
+
+		}
+		System.out.println("unmarshalling done");
+		return trades;
+
 	}
-	
-	
+
 }

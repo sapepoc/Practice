@@ -1,14 +1,23 @@
 package org.example.controller;
 
+
+
+import java.io.File;
+
+import org.drools.common.EventFactHandle;
+import org.drools.runtime.rule.FactHandle;
 import org.example.DTO.DataUnMarshallar;
+import org.example.DTO.Person;
 import org.example.entities.RuleGroups;
+import org.example.entities.Trade;
+import org.example.entities.Trades;
 import org.example.enums.EngineType;
 import org.example.errorhandling.FXErrorCodes;
-
 import org.example.services.ProxyService;
 import org.example.services.RuleEngine;
 import org.example.services.RuleEngineBuilder;
 import org.example.services.RuleGroupLoader;
+import org.example.services.RuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -26,21 +35,36 @@ public class RuleServiceController {
 	@Autowired
 	RuleEngineBuilder ruleEngineBuilder;
 	@Autowired
-	RuleEngine ruleEngine;
+	RuleService ruleService;
 
 	EngineType engineType;
 
 	public void start() {
-
-		System.out.println(FXErrorCodes.Series.EVENTS.toString()+" "+FXErrorCodes.ALERT_NOT_FOUND.getInfoMessage());
-
-		RuleGroups ruleGroups = ruleGroupLoader.getRuleGroups();
-		String data = proxyService.getData();
-		dataUnMarshallar.unmarshal(data);
-		FXErrorCodes.ALERT_NOT_FOUND.getInfoMessage();
 		
+		File file = new File("D:/FX/Trade.xml");
 		
+		if(file.exists())
+		{
+			System.out.println("**********************file exists******************************");
+		}
+		
+		else
+		{
+			System.out.println("*********************Does not  exists******************************");
+		}
+		try {
+			Trades trades=dataUnMarshallar.unmarshal(file, Trades.class);
+			ruleService.checkTrade(trades);
+		    
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
 		
 	}
+	
+	
+	
+	
 
 }

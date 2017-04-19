@@ -1,40 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type = "text/xsl" href = "Input.xsl"?>
 <TradeData>
-	<Trade id="1">
+	<Order id="1">
 		<Trader name="piyush">piyush1@gmail.com</Trader>
-		<SartTime>2001-10-10 21:34:46 -0400</SartTime>
-		<EndTime>2001-10-10 21:34:46 -0400</EndTime>
+		<Underlying>Stock1</Underlying>
+		<Type>Sell</Type>
+		<Price>125</Price>
+		<volume>250</volume>
+		<Time>2001-10-10 21:34:46 -0400</Time>
+	</Order>
+	<Order id="2">
+		<Trader name="piyush">piyush1@gmail.com</Trader>
+		<Underlying>Stock1</Underlying>
+		<Type>Buy</Type>
+		<Price>125</Price>
+		<volume>250</volume>
+		<Time>2001-10-10 21:34:47 -0400</Time>
+	</Order>
+	<Order id="3">
+		<Trader name="sandeep">sandeep@gmail.com</Trader>
+		<Underlying>Stock2</Underlying>
+		<Type>Buy</Type>
+		<Price>100</Price>
+		<volume>250</volume>s
+		<Time>2001-10-10 21:34:48 -0400</Time>
+	</Order>
+	<Order id="4">
+		<Trader name="sandeep">sandeep@gmail.com</Trader>
+		<Underlying>Stock2</Underlying>
+		<Type>Sell</Type>
+		<Price>100</Price>
+		<volume>245</volume>
+		<Time>2001-10-10 21:34:49 -0400</Time>
+	</Order>
+	<Order id="5">
+		<Trader name="hemant">hemant@gmail.com</Trader>
+		<Underlying>Stock3</Underlying>
+		<Type>Sell</Type>
+		<Price>80</Price>
+		<volume>250</volume>
+		<Time>2001-10-10 21:34:50 -0400</Time>
+	</Order>
+	<Order id="6">
+		<Trader name="ankit">ankit@gmail.com</Trader>
+		<Underlying>Stock3</Underlying>
+		<Type>Buy</Type>
+		<Price>80</Price>
+		<volume>250</volume>
+		<Time>2001-10-10 21:34:51 -0400</Time>
+	</Order>
+	<Order id="7">
+		<Trader name="ankit">ankit@gmail.com</Trader>
+		<Underlying>stock3</Underlying>
+		<Type>Sell</Type>
+		<Price>125</Price>
+		<volume>250</volume>
+		<Time>2001-10-10 21:34:52 -0400</Time>
+		</Order>
+	<Order id="8">
+		<Trader name="hemant">hemant@gmail.com</Trader>
+		<Underlying>Stock3</Underlying>
+		<Type>buy</Type>
+		<Price>125</Price>
+		<volume>250</volume>
+		<Time>2001-10-10 21:34:53 -0400</Time>
 		<TradeValue>1000</TradeValue>
-
-	</Trade>
-
-	<Trade id="2">
-		<Trader name="piyush2">piyush2@gmail.com</Trader>
-		<SartTime>2001-10-10 21:34:46 -0400</SartTime>
-		<EndTime>2001-10-10 21:34:46 -0400</EndTime>
-		<TradeValue>1000</TradeValue>
-
-	</Trade>
-	<Trade id="3">
-		<Trader name="piyush3">piyush3@gmail.com</Trader>
-		<SartTime>2001-10-10 21:34:46 -0400</SartTime>
-		<EndTime>2001-10-10 21:34:46 -0400</EndTime>
-		<TradeValue>1000</TradeValue>
-
-	</Trade>
-	<Trade id="4">
-		<Trader name="piyush4">piyush4@gmail.com</Trader>
-		<SartTime>2001-10-10 21:34:46 -0400</SartTime>
-		<EndTime>2001-10-10 21:34:46 -0400</EndTime>
-		<TradeValue>1000</TradeValue>
-
-	</Trade>
-	<Trade id="5">
-		<Trader name="piyush5">piyush5@gmail.com</Trader>
-		<SartTime>2001-10-10 21:34:46 -0400</SartTime>
-		<EndTime>2001-10-10 21:34:46 -0400</EndTime>
-		<TradeValue>1000</TradeValue>
-
-	</Trade>
+	</Order>
 </TradeData>

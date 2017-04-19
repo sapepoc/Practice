@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:element name="TradeData" type="TradeDataType"/>
+  <xs:complexType name="TraderType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="name" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="OrderType" mixed="true">
+    <xs:sequence>
+      <xs:element type="TraderType" name="Trader"/>
+      <xs:element type="xs:string" name="Underlying"/>
+      <xs:element type="xs:string" name="Type"/>
+      <xs:element type="xs:byte" name="Price"/>
+      <xs:element type="xs:short" name="volume"/>
+      <xs:element type="xs:string" name="Time"/>
+      <xs:element type="xs:short" name="TradeValue" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:byte" name="id" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="TradeDataType">
+    <xs:sequence>
+      <xs:element type="OrderType" name="Order" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

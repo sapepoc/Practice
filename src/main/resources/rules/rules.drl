@@ -5,10 +5,10 @@ import org.example.entities.Trade;
 rule "Wash Trade"
 
 	when
-        trade:Trade (getUser() == 'piyush'|| getUser()=='test')
+        trade:Trade (getUnderLying() == 'Stock3')
        
      
     then
         
-        trade.setSecurity('First Name is ' + trade.getUser());
+        System.out.println("*********Trade matched ******");
 end
